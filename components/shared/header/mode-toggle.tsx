@@ -1,8 +1,6 @@
 "use client"
 
-import { useState, useEffect, JSX } from 'react';
-import { useTheme } from 'next-themes'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
@@ -10,8 +8,10 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
-import { MoonIcon, SunIcon, SunMoon } from 'lucide-react'
+} from "@/components/ui/dropdown-menu";
+import { MoonIcon, SunIcon, SunMoon } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { JSX } from 'react';
 
 const icons = {
     "light": <SunIcon />,
@@ -29,7 +29,7 @@ const ModeToggle = () => {
                     variant="ghost"
                     className='focus-visible:ring-0 focus-visible:ring-offset-0'
                 >
-                    {icons[(theme ?? 'light') as 'light' | 'dark' | 'system'] as JSX.Element};
+                    {icons[(theme ?? 'light') as 'light' | 'dark' | 'system'] as JSX.Element}
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
