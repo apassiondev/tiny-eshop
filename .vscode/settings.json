@@ -1,7 +1,8 @@
 {
     "window.zoomLevel": -1,
     "chat.fontSize": 11,
-    "editor.fontSize": 14,
+    // "editor.fontSize": 14,
+    "editor.fontSize": 13,
     "terminal.integrated.fontSize": 12,
     "js/ts.tsdk.path": "node_modules\\typescript\\lib",
     "terminal.integrated.defaultProfile.windows": "PowerShell"
