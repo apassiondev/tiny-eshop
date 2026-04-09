@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Star } from 'lucide-react'
 
 import { CardContent, Card, CardHeader } from "@/components/ui/card";
+import ProductPrice from "./product-price";
 
 const ProductCard = ({ product }: { product: any }) => {
     return (
@@ -33,7 +34,9 @@ const ProductCard = ({ product }: { product: any }) => {
                             <Star size={18} className="fill-yellow-300 stroke-yellow-500" />
                         </span>
                     </p>
-                    {product.stock > 0 ? (<p className="font-bold"></p>) : (
+                    {product.stock > 0 ? (
+                        <ProductPrice value={Number(product.price)} />
+                    ) : (
                         <p className="text-destructive">Out of Stock</p>
                     )}
                 </div>
