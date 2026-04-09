@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    container_name: eshop-postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-eshop}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-pwd@@pwd}
+      POSTGRES_DB: ${DB_NAME:-eshop_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - eshopdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "pg_isready -U ${DB_USER:-eshop} -d ${DB_NAME:-eshop_db}",
+      ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - eshop-network
+
+volumes:
+  eshopdata:
+    driver: local
+
+networks:
+  eshop-network:
+    driver: bridge
