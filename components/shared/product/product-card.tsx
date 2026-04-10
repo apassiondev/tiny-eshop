@@ -1,12 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import Link from "next/link";
 import { Star } from 'lucide-react'
 
 import { CardContent, Card, CardHeader } from "@/components/ui/card";
 import ProductPrice from "./product-price";
+import { TProduct } from "@/types";
 
-const ProductCard = ({ product }: { product: any }) => {
+const ProductCard = ({ product }: { product: TProduct }) => {
     return (
         <Card className="w-full max-w-sm">
             <CardHeader className="p-0 items-center">
