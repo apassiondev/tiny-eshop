@@ -1,9 +1,10 @@
-import ProductList from "@/components/shared/product/product-list";
+import ProductList from '@/components/shared/product/product-list';
 import { getLatestProducts } from '@/lib/actions/product.actions';
+import { TProduct } from '@/types';
 
 export default async function Home() {
 
-  const latestProducts = await getLatestProducts();
+  const latestProducts: TProduct[] = await getLatestProducts();
 
   return (
     <div className="space-y-8">

@@ -1,5 +1,5 @@
 import { TProduct } from "@/types";
-import ProductCard from "./product-card";
+import ProductCard from "../../../components/shared/product/product-card";
 
 const ProductList = (
     { data, title, limit }: { data: TProduct[], title?: string, limit?: number }
